@@ -1,11 +1,4 @@
 #!/bin/bash
-# python_home/
-#   venvs/
-#     venv1/
-#	  venv2/
-#   projects/
-#     project1/
-#       project1.py  
 
 # a python project directory contains source code files, and a correspondingly named venv is in the venvs folder.
 help_function () {
@@ -14,7 +7,7 @@ help_function () {
 	echo "To use venvmgr, just source the script with a desired venv name. If it exists it will be activated, and if not it will be created and then activated."
 	echo "All venvs and project files will be created in a given \"python home\"."
 	echo "The default python home is ~/python_home, and the default python version is 3."
-	echo "To visualize the layout venvmgr uses, run \`head -n 10 venvmgr.sh\`."
+	echo "To visualize the layout venvmgr uses, view venvmgr's git page at https://gitlab.com/k-caps/venvmgr."
 	echo
 	echo "USAGE:"
 	echo " source venvmgr.sh [options] PROJECT_NAME" 
@@ -34,7 +27,7 @@ help_function () {
 
 install_function () {
 	[[ -f /opt/venvmgr.sh ]] && echo "Removing previous version of venvmgr" && sudo rm /opt/venvmgr.sh
-	[[ -f ~/.bashrc ]] && printf "venvmgr () { source /opt/venvmgr.sh \"\$@\" }\n" >> ~/.bashrc
+	[[ -f ~/.bashrc ]] && printf "venvmgr () { \nsource /opt/venvmgr.sh \"\$@\" \n }\n" >> ~/.bashrc
 	[[ -f ~/.zshrc ]] && printf "venvmgr () { source /opt/venvmgr.sh \"\$@\" }\n" >> ~/.zshrc
 	venvmgr () { source /opt/venvmgr.sh "$@" }
 	echo "sudo is needed to copy venvmgr to /opt"
@@ -48,7 +41,6 @@ if [[ -z $1 ]]; then
 	printf "At least a venv name must be supplied. Try running something like:\nsource venvmgr.sh pelican\nor\nvenvmgr.sh -H to view help.\n"
 	return  
 fi	
-
 
 PYROJECT="${@[-1]}"
 PYHOME="$HOME/Dev/python_home"
