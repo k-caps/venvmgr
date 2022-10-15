@@ -32,11 +32,12 @@ python_home/
 ```
 
 ## Installation
-venvmgr can be used as a simple bash script with no installation; to do this, simply download or copy the script to your hard drive and source it with your parameters `source ~/path/to/venvmgr.sh pelican`.
+venvmgr can be used as a simple bash script with no installation; to do this, simply download or copy the script to your hard drive and source it with your parameters:
+`source ~/path/to/venvmgr.sh pelican`.
 
-However, venvmgr can be installed to your system with this oneliner, which puts it in your `/opt` directory and adds it as a function to your bash or zsh rc, and to the current shell:
-`sh -c "$(wget https://gitlab.com/k-caps/venvmgr/-/raw/main/venvmgr.sh -O -)" -I`  
-Once it has been installed, you simply will be able to call it by name from any location:
+However, venvmgr can be installed to your system with this oneliner, which puts it in your `/opt` directory and adds it as a function to your bash or zsh rc, and to the current shell:  
+`sh -c "$(wget https://gitlab.com/k-caps/venvmgr/-/raw/main/venvmgr.sh -O -)" -I`    
+Once it has been installed, you simply will be able to call it by name from any location:  
 `venvmgr -h pyhome -C pelican`
 
 ## Usage
@@ -45,11 +46,11 @@ OR (if -I has been used)
 `venvmgr [options] PROJECT_NAME`  
  
 **OPTIONS:**  
- `-h`	Directory to use as python_home  
- `-v`	Which python version to use [2|3]  
- `-C`   Clean up a given project and its venv. Can be used with `-h` to remove from a certain python home only"  
- `-I`	Install this script to `/opt/venvmgr` and add it to this and future shells  
- `-H`	Print this help and exit  
+  `-h`	Directory to use as python_home  
+  `-v`	Which python version to use [2|3]  
+  `-C`   Clean up a given project and its venv. Can be used with `-h` to remove from a certain python home only"  
+  `-I`	Install this script to `/opt/venvmgr` and add it to this and future shells  
+  `-H`	Print this help and exit  
 
 This is also printed when supplying the `-H` flag to venvmgr.
 
