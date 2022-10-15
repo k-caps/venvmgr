@@ -29,7 +29,7 @@ install_function () {
 	[[ -f /opt/venvmgr.sh ]] && echo "Removing previous version of venvmgr" && sudo rm /opt/venvmgr.sh
 	[[ -f ~/.bashrc ]] && printf "venvmgr () { \nsource /opt/venvmgr.sh \"\$@\" \n }\n" >> ~/.bashrc
 	[[ -f ~/.zshrc ]] && printf "venvmgr () { source /opt/venvmgr.sh \"\$@\" }\n" >> ~/.zshrc
-	venvmgr () { source /opt/venvmgr.sh "$@" }
+	venvmgr () ( source /opt/venvmgr.sh "$@" )
 	echo "sudo is needed to copy venvmgr to /opt"
 	SCRIPTPATH="$( cd -- "$(dirname "$SCRIPTNAME	")" >/dev/null 2>&1 ; pwd -P )"
 	sudo cp $SCRIPTPATH/venvmgr.sh /opt/venvmgr.sh
