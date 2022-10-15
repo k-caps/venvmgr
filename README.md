@@ -3,7 +3,7 @@
 venvmgr (Virtual Environment Manager) is a bash script which eases and aids python development by abstracting manual creation and management of python virtual environments, commonly called "venvs".
 
 venvmgr does not rely on any external software and makes creation, activation, and deletion of virtual environments very easy, straightforward, and fast.
-To get started using venvmgr all you need to do is run the bash script with a desired venv name, and venvmgr will create it for you, then activate it. For more details see the [Installation section](#Installation) below.
+To get started using venvmgr all you need to do is run the bash script with a desired venv name, and venvmgr will create it for you, then activate it. For more details see the [Installation section](#installation) below.
 
 When a venv is created with venvmgr, not only is the path standardized among all venvs and therefore easy to remember and find, a "project" directory is also created and will contain a blank python file, which has as its only line a shebang pointing to the venv's python executable.
 
