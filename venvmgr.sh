@@ -26,15 +26,15 @@ help_function () {
 }
 
 install_function () {
-	[[ -f /opt/venvmgr.sh ]] && echo "Removing previous version of venvmgr" && sudo rm /opt/venvmgr.sh
-	[[ -f ~/.bashrc ]] && printf "venvmgr () { \nsource /opt/venvmgr.sh \"\$@\" \n }\n" >> ~/.bashrc
-	[[ -f ~/.zshrc ]] && printf "venvmgr () { source /opt/venvmgr.sh \"\$@\" }\n" >> ~/.zshrc
+	[[ -f /opt/venvmgr/venvmgr.sh ]] && echo "Removing previous version of venvmgr" && sudo rm /opt/venvmgr/venvmgr.sh
+	[[ $(grep "venvmgr" ~/.bashrc) ]] && printf "venvmgr () { \nsource /opt/venvmgr/venvmgr.sh \"\$@\" \n }\n" >> ~/.bashrc
+	[[ $(grep "venvmgr" ~/.zshrc) ]] && printf "venvmgr () { source /opt/venvmgr/venvmgr.sh \"\$@\" }\n" >> ~/.zshrc
 	. ~/.$(basename $SHELL)rc
 	echo "sudo is needed to copy venvmgr to /opt"
 	SCRIPTPATH="$( cd -- "$(dirname "$SCRIPTNAME	")" >/dev/null 2>&1 ; pwd -P )"
-	sudo cp $SCRIPTPATH/venvmgr.sh /opt/venvmgr.sh
-	sudo chmod +x /opt/venvmgr.sh
-	[[ -f /opt/venvmgr.sh ]] && echo "Installed successfully."
+	sudo cp $SCRIPTPATH/venvmgr.sh /opt/venvmgr/venvmgr.sh
+	sudo chmod +x /opt/venvmgr/venvmgr.sh
+	[[ -f /opt/venvmgr/venvmgr.sh ]] && echo "Installed successfully."
 }
 
 if [[ -z $1 ]]; then
